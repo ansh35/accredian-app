@@ -1,31 +1,6 @@
-import {
-  ChartNoAxesCombined,
-  Presentation,
-  MonitorPlay,
-} from "lucide-react";
+import { steps } from "../data/how-it-works";
 
 export default function HowItWorksSection() {
-  const steps = [
-    {
-      no: "1",
-      title: "Skill Gap Analysis",
-      desc: "Assess team skill gaps and developmental needs.",
-      icon: ChartNoAxesCombined,
-    },
-    {
-      no: "2",
-      title: "Customized Training Plan",
-      desc: "Create a tailored roadmap addressing organizational goals.",
-      icon: Presentation,
-    },
-    {
-      no: "3",
-      title: "Flexible Program Delivery",
-      desc: "Deliver adaptable programs aligned with industry and organizational needs.",
-      icon: MonitorPlay,
-    },
-  ];
-
   return (
     <section id="howItWorks" className="mt-12 sm:mt-24">
       <div className="mx-auto max-w-6xl">
@@ -58,12 +33,12 @@ export default function HowItWorksSection() {
                 className="relative bg-blue-50 border border-blue-300 rounded-xl shadow-lg p-4 sm:p-6 flex flex-col items-center text-center max-w-[18rem] w-full"
               >
                 {/* Side bars */}
-                <div className="absolute left-[-4px] sm:left-[-8px] top-1/2 -translate-y-1/2 w-1 sm:w-2 h-12 sm:h-36 bg-blue-600 rounded-lg"></div>
+                <div className="absolute -left-1 sm:-left-2 top-1/2 -translate-y-1/2 w-1 sm:w-2 h-12 sm:h-36 bg-blue-600 rounded-lg"></div>
 
-                <div className="absolute right-[-4px] sm:right-[-8px] top-1/2 -translate-y-1/2 w-1 sm:w-2 h-12 sm:h-36 bg-blue-600 rounded-lg"></div>
+                <div className="absolute -right-1 sm:-right-2 top-1/2 -translate-y-1/2 w-1 sm:w-2 h-12 sm:h-36 bg-blue-600 rounded-lg"></div>
 
                 {/* Step Number */}
-                <div className="absolute left-[10px] top-6 -translate-y-1/2 w-6 h-6 border-blue-300 border-2 bg-white rounded-full flex justify-center items-center text-sm sm:font-bold">
+                <div className="absolute left-2.5 top-6 -translate-y-1/2 w-6 h-6 border-blue-300 border-2 bg-white rounded-full flex justify-center items-center text-sm sm:font-bold">
                   {step.no}
                 </div>
 

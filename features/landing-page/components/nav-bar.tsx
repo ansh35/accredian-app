@@ -45,7 +45,7 @@ export default function Navbar() {
     <div className="w-full flex justify-center">
       <div className="w-full">
         <nav className="fixed top-0 w-full z-50 bg-white shadow-md py-6 px-6 md:px-14">
-          <div className="max-w-[85rem] mx-auto flex justify-between items-center relative">
+          <div className="max-w-340 mx-auto flex justify-between items-center relative">
             {/* Logo */}
             <Image
               src="/logo.webp"
@@ -118,7 +118,7 @@ export default function Navbar() {
 
             {/* Mobile Dropdown */}
             {menuOpen && (
-              <div className="absolute top-[70px] right-0 bg-white shadow-lg p-6 rounded-xl w-64 md:hidden">
+              <div className="absolute top-17.5 right-0 bg-white shadow-lg p-6 rounded-xl w-64 md:hidden">
                 <ul className="flex flex-col space-y-4">
                   {navLinks.map((item) => (
                     <li key={item.name}>

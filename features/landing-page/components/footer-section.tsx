@@ -1,53 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import YouTubeIcon from "@mui/icons-material/YouTube";
+import { socials, links } from "../data/footer";
 
 export default function FooterSection() {
-  const socials = [
-    {
-      icon: <FacebookIcon />,
-      href: "https://facebook.com/accredianlearn",
-    },
-    {
-      icon: <LinkedInIcon />,
-      href: "https://www.linkedin.com/company/accredianedu/",
-    },
-    {
-      icon: <TwitterIcon />,
-      href: "https://twitter.com/accredianedu",
-    },
-    {
-      icon: <InstagramIcon />,
-      href: "https://www.instagram.com/accredian_edu",
-    },
-    {
-      icon: <YouTubeIcon />,
-      href: "https://www.youtube.com/channel/UCE0L_4ADPU2iyKnDJ0xRzyA",
-    },
-  ];
-
-  const links = [
-    {
-      label: "About",
-      href: "https://accredian.com/About",
-    },
-    {
-      label: "Blog",
-      href: "https://blog.accredian.com/",
-    },
-    {
-      label: "Why Accredian",
-      href: "https://accredian.com/whyaccredian",
-    },
-  ];
-
   return (
     <footer className="mt-12 bg-[#1d1d1d] sm:bg-white sm:mt-24 py-10">
-      <div className="max-w-[85rem] w-full px-[22px] sm:px-0 mx-auto">
+      <div className="max-w-340 w-full px-5.5 sm:px-0 mx-auto">
         {/* Top Row */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-700 pb-6">
           {/* Logo + Social */}
@@ -70,7 +28,7 @@ export default function FooterSection() {
               className="block sm:hidden"
             />
 
-            {/* Social Icons */}
+            {/* Social Icons */} 
             <div className="flex gap-4 mt-4">
               {socials.map((item, index) => {
                 const Icon = item.icon;
@@ -82,7 +40,7 @@ export default function FooterSection() {
                     target="_blank"
                     className="sm:text-gray-700 text-white hover:text-blue-600 transition"
                   >
-                    {item.icon}
+                    <Icon />
                   </Link>
                 );
               })}

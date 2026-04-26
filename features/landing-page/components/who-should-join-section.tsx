@@ -1,35 +1,9 @@
 import Image from "next/image";
-import {
-  MonitorCheck,
-  MonitorX,
-  GraduationCap,
-  Briefcase,
-} from "lucide-react";
+
+
+import { users } from "../data/who-should-join";
 
 export default function WhoShouldJoinSection() {
-  const users = [
-    {
-      title: "Tech Professionals",
-      desc: "Enhance expertise, embrace tech, drive innovation.",
-      icon: MonitorCheck,
-    },
-    {
-      title: "Non-Tech Professionals",
-      desc: "Adapt digitally, collaborate in tech environments.",
-      icon: MonitorX,
-    },
-    {
-      title: "Emerging Professionals",
-      desc: "Develop powerful skills for rapid career growth.",
-      icon: GraduationCap,
-    },
-    {
-      title: "Senior Professionals",
-      desc: "Strengthen leadership, enhance strategic decisions.",
-      icon: Briefcase,
-    },
-  ];
-
   return (
     <section className="mt-12 sm:mt-28 xl:px-6 px-4 lg:mx-10 bg-blue-600 sm:rounded-lg flex flex-col md:flex-row">
       {/* Left Side */}
@@ -39,16 +13,16 @@ export default function WhoShouldJoinSection() {
             Who Should Join?
           </h4>
 
-          <h1 className="text-2xl md:text-[40px] leading-[39px] capitalize mt-2 font-semibold">
+          <h1 className="text-2xl md:text-[40px] leading-9.75 capitalize mt-2 font-semibold">
             Strategic Skill Enhancement
           </h1>
         </div>
 
-        <div className="w-[300px] justify-center hidden md:block">
+        <div className="w-75 justify-center hidden md:block">
           <Image
             src="/imagehuman.png"
             alt="Human Illustration"
-            width={300}
+            width={300} 
             height={400}
             className="object-contain"
           />

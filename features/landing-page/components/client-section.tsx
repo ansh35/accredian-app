@@ -1,15 +1,6 @@
 import Image from "next/image";
-
+import { logos } from "../data/client";
 export default function ClientsSection() {
-  const logos = [
-    "rel.png",
-    "hcl.png",
-    "ibm.png",
-    "crif.png",
-    "adp.svg",
-    "bayer.svg",
-  ];
-
   return (
     <section
       id="clients"

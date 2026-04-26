@@ -7,25 +7,9 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-export default function TestimonialsSection() {
-  const testimonials = [
-    {
-      logo: "adp.svg",
-      alt: "ADP",
-      text: "We would like to thank Accredian for the wonderful support and the beautiful journey. The team turned our vision into reality with unparalleled dedication, service, and expertise throughout the entire process.",
-    },
-    {
-      logo: "bayer.svg",
-      alt: "Bayer",
-      text: "Accredian's commitment to excellence is unmatched. They consistently go the extra mile to ensure our needs are met and exceeded, providing reliable support and high-quality service every step of the way.",
-    },
-    {
-      logo: "rel.png",
-      alt: "Reliance",
-      text: "Choosing Accredian for the learning & development of our employees was a beneficial decision. The value derived from the course is immense & their support team is always there to help our employees.",
-    },
-  ];
+import { testimonials } from "../data/testimonials";
 
+export default function TestimonialsSection() {
   return (
     <section
       id="testimonials"
@@ -67,11 +51,11 @@ export default function TestimonialsSection() {
               slidesPerView: 2,
             },
           }}
-          className="!pb-14"
+          className="pb-14!"
         >
           {testimonials.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white border border-gray-300 rounded-xl p-6 min-h-[250px] h-full">
+              <div className="bg-white border border-gray-300 rounded-xl p-6 min-h-62.5 h-full">
                 <div className="flex flex-col items-start h-full">
                   {/* Logo */}
                   <div className="h-16 mb-4 flex items-center">

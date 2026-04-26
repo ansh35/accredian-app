@@ -35,50 +35,45 @@ export default function CourseSegmentationSection() {
     <section className="mt-12 sm:mt-28 md:mx-16 mb-10 bg-white text-center">
       {/* Heading */}
       <div className="text-center mb-10 mx-2">
-        <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
+        <h2 className="text-2xl md:text-4xl font-bold text-gray-900 leading-tight">
           Tailored <span className="text-blue-600">Course Segmentation</span>
         </h2>
 
-        <p className="text-sm sm:text-lg text-gray-700 mt-3">
+        <p className="text-sm sm:text-lg text-gray-700 mt-3 mx-1">
           Explore <span className="text-blue-600">Custom-fit Courses</span>{" "}
           Designed to Address Every Professional Focus
         </p>
       </div>
 
       {/* MOBILE SWIPER */}
-      <div className="block sm:hidden w-full px-4 max-w-7xl mx-auto">
+      <div className="block sm:hidden px-4">
         <Swiper
           modules={[Pagination, Autoplay]}
           slidesPerView={1}
-          spaceBetween={12}
-          loop={false}
-          speed={700}
+          spaceBetween={20}
           autoplay={{
-            delay: 3000,
+            delay: 2500,
             disableOnInteraction: false,
-            pauseOnMouseEnter: true,
           }}
           pagination={{
             clickable: true,
           }}
-          className="pb-12"
+          className="pb-14"
         >
           {courses.map((course, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white border border-gray-300 rounded-xl min-h-full h-full shadow-lg overflow-hidden">
+              <div className="bg-white rounded-lg w-full shadow-lg border border-gray-300">
                 <Image
                   src={course.image}
                   alt={course.title}
                   width={600}
                   height={250}
-                  className="w-full h-40 object-cover"
+                  className="w-full h-40 object-cover rounded-t-lg"
                 />
 
-                <div className="p-6">
-                  <h4 className="text-2xl font-semibold text-blue-600">
-                    {course.title}
-                  </h4>
-                </div>
+                <h4 className="text-2xl font-semibold text-blue-600 p-6">
+                  {course.title}
+                </h4>
               </div>
             </SwiperSlide>
           ))}
@@ -97,14 +92,14 @@ export default function CourseSegmentationSection() {
               alt={course.title}
               width={500}
               height={250}
-              className="w-full h-40 object-cover rounded-t-lg"
+              className="w-full h-40 object-cover rounded-t-lg mb-4"
             />
 
-            <h4 className="text-2xl font-semibold text-blue-600 p-6">
+            <h4 className="text-2xl font-semibold text-blue-600 px-6">
               {course.title}
             </h4>
 
-            <p className="text-gray-600 text-sm px-6 pb-6">
+            <p className="text-gray-600 mt-2 text-sm px-6 pb-6">
               {course.desc}
             </p>
           </div>

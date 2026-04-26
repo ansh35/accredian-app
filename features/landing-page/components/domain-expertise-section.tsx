@@ -1,24 +1,6 @@
-import {
-  Lightbulb,
-  Brain,
-  Users,
-  BarChart3,
-  Settings,
-  Globe,
-  Landmark,
-} from "lucide-react";
+import { expertise } from "../data/domain-expertise";
 
 export default function DomainExpertiseSection() {
-  const expertise = [
-    { title: "Product & Innovation Hub", icon: Lightbulb },
-    { title: "Gen-AI Mastery", icon: Brain },
-    { title: "Leadership Elevation", icon: Users },
-    { title: "Tech & Data Insights", icon: BarChart3 },
-    { title: "Operations Excellence", icon: Settings },
-    { title: "Digital Enterprise", icon: Globe },
-    { title: "Fintech Innovation Lab", icon: Landmark },
-  ];
-
   return (
     <section className="mt-12 sm:mt-24 mb-4">
       <div className="max-w-6xl mx-auto px-4">

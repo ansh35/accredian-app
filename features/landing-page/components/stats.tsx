@@ -27,7 +27,7 @@ export default function Stats() {
                         <h2>10K+</h2>
                     </div>
 
-                    <p className="max-w-[300px]">
+                    <p className="max-w-75">
                         Professionals trained for exceptional career success
                     </p>
                     </div>
@@ -38,7 +38,7 @@ export default function Stats() {
                         <h2>200+</h2>
                     </div>
 
-                    <p className="max-w-[300px]">
+                    <p className="max-w-75">
                         Sessions delivered with unmatched learning excellence
                     </p>
                     </div>
@@ -49,7 +49,7 @@ export default function Stats() {
                         <h2>5K+</h2>
                     </div>
 
-                    <p className="max-w-[300px]">
+                    <p className="max-w-75">
                         Active learners engaged in dynamic courses
                     </p>
                     </div>
@@ -59,7 +59,7 @@ export default function Stats() {
                 <div className="sm:hidden grid grid-cols-1 p-4 gap-10 rounded-xl">
                     {/* Item 1 */}
                     <div className="flex justify-start items-center text-left gap-4 border-b-2 pb-4">
-                    <div className="flex justify-center items-center text-blue-600 font-semibold w-full max-w-[70px] bg-blue-100 p-2 rounded-full">
+                    <div className="flex justify-center items-center text-blue-600 font-semibold w-full max-w-17.5 bg-blue-100 p-2 rounded-full">
                         <h2 className="text-md md:text-2xl">10K+</h2>
                     </div>
 
@@ -70,7 +70,7 @@ export default function Stats() {
 
                     {/* Item 2 */}
                     <div className="flex justify-start items-center text-left gap-4 border-b-2 pb-4">
-                    <div className="flex justify-center items-center text-blue-600 font-semibold w-full max-w-[70px] bg-blue-100 p-2 rounded-full">
+                    <div className="flex justify-center items-center text-blue-600 font-semibold w-full max-w-17.5 bg-blue-100 p-2 rounded-full">
                         <h2 className="text-md md:text-2xl">200+</h2>
                     </div>
 
@@ -81,7 +81,7 @@ export default function Stats() {
 
                     {/* Item 3 */}
                     <div className="flex justify-start items-center text-left gap-4 pr-4">
-                    <div className="flex justify-center items-center text-blue-600 font-semibold w-full max-w-[70px] bg-blue-100 p-2 rounded-full">
+                    <div className="flex justify-center items-center text-blue-600 font-semibold w-full max-w-17.5 bg-blue-100 p-2 rounded-full">
                         <h2 className="text-md md:text-2xl">5K+</h2>
                     </div>
 

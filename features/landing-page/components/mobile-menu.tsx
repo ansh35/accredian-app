@@ -31,7 +31,7 @@ export default function MobileMenu() {
 
       {/* Dropdown Menu */}
       {open && (
-        <div className="absolute top-[60px] right-0 bg-white shadow-lg p-6 rounded-xl min-w-[220px] z-50">
+        <div className="absolute top-15 right-0 bg-white shadow-lg p-6 rounded-xl min-w-55 z-50">
           <ul className="flex flex-col space-y-4">
             <li>
               <Link
