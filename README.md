@@ -21,6 +21,14 @@ A premium, responsive landing page for Accredian's enterprise solutions.
    ```
 4. **View the application**: Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+### **Production Setup (Vercel KV)**
+To ensure your enquiries are stored persistently in production:
+1. Go to your **Vercel Project Dashboard**.
+2. Navigate to the **Storage** tab.
+3. Click **Create Database** and select **KV**.
+4. Link the KV database to your project.
+5. Redeploy your application.
+
 ## Approach Taken
 
 1. **Design First**: Focused on creating a premium look using vanilla CSS/Tailwind-like utility classes to match the Accredian brand identity.
@@ -29,7 +37,7 @@ A premium, responsive landing page for Accredian's enterprise solutions.
 4. **Robust Validation**: 
    - **Client-side**: Used `react-hook-form` with a `zod` resolver for immediate feedback and type safety.
    - **Server-side**: Implemented a Next.js API route that validates incoming JSON using the same Zod schema before persisting.
-5. **Local Persistence**: Designed a simple JSON-based storage layer in the `data/` directory to simulate a database without complex setup.
+5. **Local Persistence**: Designed a simple JSON-based storage layer in the `data/` directory. For production (Vercel), a graceful fallback is implemented to log enquiries to the cloud console, preventing 500 errors caused by the read-only serverless filesystem.
 
 ## AI Usage Explanation
 

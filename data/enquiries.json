@@ -22,5 +22,17 @@
     "location": "Gurgaon",
     "id": 1777224881781,
     "createdAt": "2026-04-26T17:34:41.781Z"
+  },
+  {
+    "name": "Brain Torricelli",
+    "email": "braintorricelli@gmail.com",
+    "phone": "+91 9340908587",
+    "company": "Arvat AI",
+    "domain": "Technology",
+    "candidates": "10",
+    "mode": "Online",
+    "location": "Bangalore",
+    "id": 1777226591739,
+    "createdAt": "2026-04-26T18:03:11.739Z"
   }
 ]
