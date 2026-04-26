@@ -3,7 +3,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-export default function SupportSection() {
+export default function SupportSection({ onEnquire }: { onEnquire: () => void }) {
   return (
     <section
       id="supportSection"
@@ -33,7 +33,7 @@ export default function SupportSection() {
         </div>
 
         {/* CTA Button */}
-        <button className="w-full max-w-50 py-2 sm:px-4 sm:py-3 mt-4 rounded-lg text-blue-600 bg-white text-xl font-semibold flex items-center justify-center gap-1 hover:bg-gray-100 transition">
+        <button className="w-full max-w-50 py-2 sm:px-4 sm:py-3 mt-4 rounded-lg text-blue-600 bg-white text-xl font-semibold flex items-center justify-center gap-1 hover:bg-gray-100 transition" onClick={onEnquire}>
           Contact Us
           <ChevronRight size={22} />
         </button>

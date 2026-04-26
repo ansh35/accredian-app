@@ -1,0 +1,26 @@
+[
+  {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "phone": "+919876543210",
+    "company": "Aero Corp",
+    "domain": "Technology",
+    "candidates": "50",
+    "mode": "Online",
+    "location": "Gurgaon",
+    "id": 1777224809296,
+    "createdAt": "2026-04-26T17:33:29.296Z"
+  },
+  {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "phone": "+919876543210",
+    "company": "Aero Corp",
+    "domain": "Technology",
+    "candidates": "50",
+    "mode": "Online",
+    "location": "Gurgaon",
+    "id": 1777224881781,
+    "createdAt": "2026-04-26T17:34:41.781Z"
+  }
+]

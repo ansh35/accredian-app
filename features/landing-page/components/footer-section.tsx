@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { socials, links } from "../data/footer";
 
-export default function FooterSection() {
+export default function FooterSection({ onEnquire }: { onEnquire: () => void }) {
   return (
     <footer className="mt-12 bg-[#1d1d1d] sm:bg-white sm:mt-24 py-10">
       <div className="max-w-340 w-full px-5.5 sm:px-0 mx-auto">
@@ -28,7 +28,7 @@ export default function FooterSection() {
               className="block sm:hidden"
             />
 
-            {/* Social Icons */} 
+            {/* Social Icons */}
             <div className="flex gap-4 mt-4">
               {socials.map((item, index) => {
                 const Icon = item.icon;
@@ -49,7 +49,10 @@ export default function FooterSection() {
 
           {/* CTA */}
           <div className="mt-6 justify-center md:mt-0">
-            <button className="p-2 sm:px-6 sm:py-2 bg-blue-600 text-sm sm:text-lg text-white rounded-lg hover:bg-blue-700 transition">
+            <button
+              onClick={onEnquire}
+              className="p-2 sm:px-6 sm:py-2 bg-blue-600 text-sm sm:text-lg text-white rounded-lg hover:bg-blue-700 transition"
+            >
               Enquire Now
             </button>
 

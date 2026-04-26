@@ -2,7 +2,7 @@ import Image from "next/image";
 import { CircleCheck } from "lucide-react";
 import { features } from "../data/hero";
 
-export default function HeroSection() {
+export default function HeroSection({ onEnquire }: { onEnquire: () => void }) {
   return (
     <div className="flex justify-center items-start">
       <div className="max-w-340 w-full">
@@ -30,9 +30,8 @@ export default function HeroSection() {
                 {features.map((item, index) => (
                   <li
                     key={item}
-                    className={`flex items-center gap-2 mb-2 ${
-                      index === 3 ? "sm:hidden" : ""
-                    }`}
+                    className={`flex items-center gap-2 mb-2 ${index === 3 ? "sm:hidden" : ""
+                      }`}
                   >
                     <CircleCheck className="w-6 h-6 text-green-600" />
                     {item}
@@ -42,8 +41,11 @@ export default function HeroSection() {
 
               {/* Button */}
               <div className="flex mb-6 sm:mb-0 justify-center sm:justify-start">
-                <button className="w-[80%] sm:w-42.5 p-1.75 text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 transition">
-                  <p className="text-sm md:text-xl">Enquire Now</p>
+                <button
+                  onClick={onEnquire}
+                  className="w-[80%] sm:w-42.5 p-1.75 text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 transition"
+                >
+                  <p className="text-sm md:text-xl font-medium">Enquire Now</p>
                 </button>
               </div>
             </div>

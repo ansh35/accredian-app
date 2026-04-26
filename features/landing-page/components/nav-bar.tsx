@@ -60,11 +60,10 @@ export default function Navbar() {
               {navLinks.map((item) => (
                 <li
                   key={item.name}
-                  className={`text-[16px] cursor-pointer ${
-                    activeLink === item.href
+                  className={`text-[16px] cursor-pointer ${activeLink === item.href
                       ? "text-blue-600 font-semibold border-b-[3px] border-blue-600"
                       : "text-black"
-                  }`}
+                    }`}
                 >
                   <Link
                     href={item.href}
@@ -128,11 +127,10 @@ export default function Navbar() {
                           setActiveLink(item.href);
                           setMenuOpen(false);
                         }}
-                        className={`text-[16px] ${
-                          activeLink === item.href
+                        className={`text-[16px] ${activeLink === item.href
                             ? "text-blue-600 font-semibold border-b-2 border-blue-600"
                             : "text-black"
-                        }`}
+                          }`}
                       >
                         {item.name}
                       </Link>
