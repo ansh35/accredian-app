@@ -1,60 +1,55 @@
 # Accredian Enterprise Landing Page
 
-A premium, responsive landing page for Accredian's enterprise solutions.
+A premium, responsive landing page for Accredian's enterprise solutions, featuring a full-stack enquiry management system.
 
-## Features
-- **Responsive Navbar**: Clean navigation that collapses into a hamburger menu on mobile.
-- **Hero Section**: Engaging CTA to open the Enquiry Modal.
-- **Enquiry Modal**: A full-featured modal with professional styling, multi-step field validation, and real-time feedback.
-- **Full-Stack Feedback**: Client-side validation with **Zod** and server-side persistence in a local JSON file.
+## 🚀 Features
+- **Modern UI**: Clean, professional design with smooth transitions and glassmorphism effects.
+- **Controlled Modal**: A centralized "Enquire Now" modal accessible from the Hero, Footer, and Support sections.
+- **Smart Form**: 
+  - **Client-Side Validation**: Real-time feedback using `react-hook-form` and `Zod`.
+  - **Type Safety**: Fully typed form data and API responses.
+- **Hybrid Storage**:
+  - **Local Development**: Saves enquiries to a local `data/enquiries.json` file.
+  - **Production (Vercel)**: Uses **Vercel KV (Redis)** for persistent data storage in a serverless environment.
 
-## Setup Instructions
+## 🛠️ Setup Instructions
 
-1. **Clone the repository** (if applicable).
-2. **Install dependencies**:
+1. **Install dependencies**:
    ```bash
    npm install
    ```
+2. **Setup Vercel KV (For Production Persistence)**:
+   - Connect your project to Vercel.
+   - Go to the **Storage** tab in your Vercel Dashboard.
+   - Create a **KV (Redis)** database and link it to this project.
+   - This automatically adds the necessary environment variables (`KV_REST_API_URL`, etc.).
 3. **Run the development server**:
    ```bash
    npm run dev
    ```
-4. **View the application**: Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. **View the application**: Open [http://localhost:3000](http://localhost:3000).
 
-### **Production Setup (Vercel KV)**
-To ensure your enquiries are stored persistently in production:
-1. Go to your **Vercel Project Dashboard**.
-2. Navigate to the **Storage** tab.
-3. Click **Create Database** and select **KV**.
-4. Link the KV database to your project.
-5. Redeploy your application.
+## 💡 Approach & Technical Decisions
 
-## Approach Taken
+1. **State Lifting**: To allow multiple disparate buttons to trigger the same modal, I lifted the modal state to the root `Page` component. This ensures a single source of truth for the UI state.
+2. **Schema-Driven Validation**: By defining a shared **Zod schema**, I ensured that the data validation rules are identical on both the client (for UX) and the server (for security).
+3. **Graceful Fallback Storage**: Developed an API route that detects its environment. It tries to use KV for production persistence but falls back to a local JSON file for a seamless developer experience without needing cloud setup.
+4. **Modular Architecture**: Split the landing page into isolated components (Hero, FAQ, Stats, etc.) making it easy to maintain and scale.
 
-1. **Design First**: Focused on creating a premium look using vanilla CSS/Tailwind-like utility classes to match the Accredian brand identity.
-2. **Component Architecture**: Used Next.js App Router for a modular structure. Split the landing page into reusable components (Hero, Stats, Testimonials, etc.).
-3. **Global State Integration**: Implemented a centered modal pattern triggered by multiple CTA buttons (Hero, Footer, Support) using React state lifting.
-4. **Robust Validation**: 
-   - **Client-side**: Used `react-hook-form` with a `zod` resolver for immediate feedback and type safety.
-   - **Server-side**: Implemented a Next.js API route that validates incoming JSON using the same Zod schema before persisting.
-5. **Local Persistence**: Designed a simple JSON-based storage layer in the `data/` directory. For production (Vercel), a graceful fallback is implemented to log enquiries to the cloud console, preventing 500 errors caused by the read-only serverless filesystem.
+## 🤖 AI Usage Attribution
 
-## AI Usage Explanation
+- **AI-Assisted (30%)**:
+  - Initial scaffolding for the FAQ and Stats sections.
+  - Generating the baseline Zod schema and API route boilerplate.
+  - Optimization of CSS transitions for the modal zoom effects.
+- **Manual Implementation (70%)**:
+  - Core architecture (State lifting, Modal control logic from scratch).
+  - Implementation of `react-hook-form` with custom hooks.
+  - Developing the Hybrid Storage logic (KV vs. Local File detection).
+  - Final visual polishing, responsive debugging, and ensuring the UI feels "premium" rather than generic.
 
-- **What I built using AI**:
-  - The initial scaffolding of a few sections (Stats, FAQ) to save time on repetitive HTML structure.
-  - The Zod schema structure and basic API route template.
-  - Assistance with specific Tailwind class combinations for the glassmorphism effects.
-- **What I did by myself**:
-  - Entire layout assembly and responsive design adjustments.
-  - Refactoring the form from a static section into a controlled modal.
-  - Implementing the complex scroll-to-trigger vs modal-open-trigger logic across the page.
-  - Final visual polishing and ensuring the UI feels "premium" rather than generic.
+## 📈 Future Improvements
 
-## Improvements with More Time
-
-1. **Email Notifications**: Integrate a service like Resend or SendGrid to notify staff when a new enquiry is submitted.
-2. **Admin Dashboard**: Build a protected `/admin` route to view and manage stored enquiries directly in the browser.
-3. **Framer Motion**: Add more advanced entrance animations and hover transitions for a more "living" feel.
-4. **Database Integration**: Switch from `enquiries.json` to a proper database like PostgreSQL (via Prisma) or MongoDB for production scalability.
-5. **A/B Testing**: Implement tracking to see which "Enquire Now" button gets more clicks.
+1. **Dashboard UI**: Add an authenticated admin view to browse and filter enquiries stored in Vercel KV.
+2. **Email Automation**: Connect a service like Resend to trigger instant email notifications upon submission.
+3. **Data Exports**: Add a feature to download enquiries as CSV/Excel for the sales team.
