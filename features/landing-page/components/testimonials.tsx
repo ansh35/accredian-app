@@ -67,7 +67,7 @@ export default function TestimonialsSection() {
               slidesPerView: 2,
             },
           }}
-          className="pb-12"
+          className="!pb-14"
         >
           {testimonials.map((item, index) => (
             <SwiperSlide key={index}>
@@ -94,6 +94,25 @@ export default function TestimonialsSection() {
           ))}
         </Swiper>
       </div>
+
+      <style jsx global>{`
+        .swiper-pagination {
+          position: relative !important;
+          margin-top: 20px;
+          bottom: 0 !important;
+        }
+
+        .swiper-pagination-bullet {
+          width: 10px;
+          height: 10px;
+          opacity: 1;
+          background: #cbd5e1;
+        }
+
+        .swiper-pagination-bullet-active {
+          background: #2563eb;
+        }
+      `}</style>
     </section>
   );
 }

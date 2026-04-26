@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("#home");
 
   const navLinks = [
     { name: "Home", href: "#home" },
@@ -17,6 +18,28 @@ export default function Navbar() {
     { name: "FAQs", href: "#faqs" },
     { name: "Testimonials", href: "#testimonials" },
   ];
+
+  /* Auto change active nav on scroll */
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY + 140; // navbar offset
+
+      for (let i = navLinks.length - 1; i >= 0; i--) {
+        const item = navLinks[i];
+        const section = document.querySelector(item.href) as HTMLElement | null;
+
+        if (section && scrollY >= section.offsetTop) {
+          setActiveLink(item.href);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="w-full flex justify-center">
@@ -34,39 +57,62 @@ export default function Navbar() {
 
             {/* Desktop Menu */}
             <ul className="hidden md:flex justify-end items-center flex-1 space-x-8 ml-10">
-              {navLinks.map((item, index) => (
+              {navLinks.map((item) => (
                 <li
                   key={item.name}
                   className={`text-[16px] cursor-pointer ${
-                    index === 0
+                    activeLink === item.href
                       ? "text-blue-600 font-semibold border-b-[3px] border-blue-600"
                       : "text-black"
                   }`}
                 >
-                  <Link href={item.href}>{item.name}</Link>
+                  <Link
+                    href={item.href}
+                    onClick={() => setActiveLink(item.href)}
+                  >
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Button */}
             <div className="md:hidden flex items-center">
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle Menu"
               >
-                <svg
-                  stroke="currentColor"
-                  fill="none"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  className="w-8 h-8 text-black cursor-pointer"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  />
-                </svg>
+                {menuOpen ? (
+                  /* Cross Icon */
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    className="w-8 h-8 text-black"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 6l12 12M18 6L6 18"
+                    />
+                  </svg>
+                ) : (
+                  /* Hamburger Icon */
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    className="w-8 h-8 text-black"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4 6h16M4 12h16m-7 6h7"
+                    />
+                  </svg>
+                )}
               </button>
             </div>
 
@@ -74,13 +120,16 @@ export default function Navbar() {
             {menuOpen && (
               <div className="absolute top-[70px] right-0 bg-white shadow-lg p-6 rounded-xl w-64 md:hidden">
                 <ul className="flex flex-col space-y-4">
-                  {navLinks.map((item, index) => (
+                  {navLinks.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        onClick={() => setMenuOpen(false)}
+                        onClick={() => {
+                          setActiveLink(item.href);
+                          setMenuOpen(false);
+                        }}
                         className={`text-[16px] ${
-                          index === 0
+                          activeLink === item.href
                             ? "text-blue-600 font-semibold border-b-2 border-blue-600"
                             : "text-black"
                         }`}

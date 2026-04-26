@@ -3,41 +3,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import MobileMenu from "../features/components/mobile-menu";
-import Navbar from "@/features/components/nav-bar";
-import HeroSection from "@/features/components/hero-section";
-import Stats from "@/features/components/stats";
-import ClientsSection from "@/features/components/client-section";
-import AccredianEdgeSection from "@/features/components/accredian-edge-section";
-import DomainExpertiseSection from "@/features/components/domain-expertise-section";
-import CourseSegmentationSection from "@/features/components/course-segmentaion-section";
-import WhoShouldJoinSection from "@/features/components/who-should-join-section";
-import CatFrameworkSection from "@/features/components/cat-framework";
-import HowItWorksSection from "@/features/components/how-it-works";
-import FAQSection from "@/features/components/faqs-section";
-import Testimonials from "@/features/components/testimonials";
-import SupportSection from "@/features/components/support-section";
-import FooterSection from "@/features/components/footer-section"
-/*
-PUT THIS FILE IN:
-
-app/page.tsx
-
-ALSO ADD next.config.js:
-
-const nextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "storage.googleapis.com",
-      },
-    ],
-  },
-};
-
-export default nextConfig;
-*/
+import MobileMenu from "../features/landing-page/components/mobile-menu";
+import Navbar from "@/features/landing-page/components/nav-bar";
+import HeroSection from "@/features/landing-page/components/hero-section";
+import Stats from "@/features/landing-page/components/stats";
+import ClientsSection from "@/features/landing-page/components/client-section";
+import AccredianEdgeSection from "@/features/landing-page/components/accredian-edge-section";
+import DomainExpertiseSection from "@/features/landing-page/components/domain-expertise-section";
+import CourseSegmentationSection from "@/features/landing-page/components/course-segmentaion-section";
+import WhoShouldJoinSection from "@/features/landing-page/components/who-should-join-section";
+import CatFrameworkSection from "@/features/landing-page/components/cat-framework";
+import HowItWorksSection from "@/features/landing-page/components/how-it-works";
+import FAQSection from "@/features/landing-page/components/faqs-section";
+import Testimonials from "@/features/landing-page/components/testimonials";
+import SupportSection from "@/features/landing-page/components/support-section";
+import FooterSection from "@/features/landing-page/components/footer-section"
 
 export default function Page() {
   const [menuOpen, setMenuOpen] = useState(false);
